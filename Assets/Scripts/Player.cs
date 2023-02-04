@@ -1,5 +1,4 @@
-using System.Threading.Tasks.Dataflow;
-using System.Numerics;
+//using System.Threading.Tasks.Dataflow;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,15 +11,14 @@ public class Player : MonoBehaviour
     //public int health;
     //public Transform groundCheck;
 
-    //private bool invulnarable = false;
-    //private bool grounded = false;
-    //private bool jumping = false;
-    //private bool facingRight = true;
+    private bool invulnarable = false;
+    private bool grounded = false;
+    private bool jumping = false;
+    private bool facingRight = true;
 
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidbody2D;
     private Animator animator;
-    //private Transform transform;
 
     // Start is called before the first frame update
     // uma unica vez ao iniciar
@@ -28,7 +26,6 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        //transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -43,7 +40,6 @@ public class Player : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
 
         rigidbody2D.velocity = new Vector2(move * speed, rigidbody2D.velocity.y);
-
         if(move < 0f && facingRight || move > 0f && !facingRight) {
             Flip();
         };
@@ -52,6 +48,7 @@ public class Player : MonoBehaviour
     void Flip() {
         facingRight = !facingRight;
         transform.localScale = new Vector3(
-            -transform.localScale.x, transform.position.y. transform.position.x);
+            -transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        
     }
 }
