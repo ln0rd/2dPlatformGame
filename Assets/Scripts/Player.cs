@@ -6,8 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float speed;
-    public int jumpForce;
+    public float speed = 4;
+    public int jumpForce = 600;
     public int health;
     public Transform groundCheck;
 
@@ -71,8 +71,7 @@ public class Player : MonoBehaviour
     }
 
     void ExecuteJumping() {
-        if (jumping)
-        {
+        if (jumping) {
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             // para nao pular novamente e o personagem nao sair voando
             jumping = false;
