@@ -39,7 +39,16 @@ public class Player : MonoBehaviour
         // quando vai para a direita o valor e positivo, esquerda e negativo
         float move = Input.GetAxis("Horizontal");
 
+        movePlayer(move);
+        turnLeftOrRight(move);
+    }
+
+    float movePlayer(float move) {
         rigidbody2D.velocity = new Vector2(move * speed, rigidbody2D.velocity.y);
+        return move;
+    }
+
+    void turnLeftOrRight(float move) {
         if(move < 0f && facingRight || move > 0f && !facingRight) {
             Flip();
         };
