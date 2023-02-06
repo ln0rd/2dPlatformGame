@@ -20,9 +20,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     private Animator animator;
 
+    // Y - verticial
+    // X - horizontal
+
     // Start is called before the first frame update
     // uma unica vez ao iniciar
-    void Start() {
+    void Start() 
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         // e o objeto de fisica e quem sofre as ações da gravidade
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -31,7 +35,8 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     // se houver 30 fps ele executara 30 vezes por segundo
-    void Update() {
+    void Update() 
+    {
         // ele cria uma linha imaginaria para que vc saiba se ele está encostando no chao, ultimo parametro é a camada que está tocado
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
@@ -40,10 +45,13 @@ public class Player : MonoBehaviour
             jumping = true;
         }
 
+        ExecuteAnimations();
+
     }
 
     // faz o mesmo que a Update mas indicado para RigidBodys
-    void FixedUpdate() {
+    void FixedUpdate() 
+    {
         // quando vai para a direita o valor e positivo, esquerda e negativo
         float move = Input.GetAxis("Horizontal");
 
@@ -52,29 +60,41 @@ public class Player : MonoBehaviour
         ExecuteJumping();
     }
 
-    float ExecuteMove(float move) {
+    float ExecuteMove(float move) 
+    {
         rigidbody2D.velocity = new Vector2(move * speed, rigidbody2D.velocity.y);
         return move;
     }
 
-    void TurnLeftOrRight(float move) {
+    void TurnLeftOrRight(float move) 
+    {
         if(move < 0f && facingRight || move > 0f && !facingRight) {
             ExecuteFlip();
         }
     }
 
-    void ExecuteFlip() {
+    void ExecuteFlip() 
+    {
         facingRight = !facingRight;
         transform.localScale = new Vector3(
             -transform.localScale.x, transform.localScale.y, transform.localScale.z);
         
     }
 
-    void ExecuteJumping() {
+    void ExecuteJumping() 
+    {
         if (jumping) {
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             // para nao pular novamente e o personagem nao sair voando
             jumping = false;
         }
+    }
+
+    void ExecuteAnimations()
+    {
+        float playerVelocity = rigidbody2D.velocity.y;
+        animator.SetFloat("VelY", playerVelocity);
+        animator.SetBool("JumpFall", !grounded);
+        animator.SetBool("Walk", rigidbody2D.velocity.x != 0f && grounded);
     }
 }
