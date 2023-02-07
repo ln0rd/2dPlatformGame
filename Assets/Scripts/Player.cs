@@ -20,6 +20,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     private Animator animator;
 
+    public float attackRate;
+    public Transform spawnAttack;
+    public GameObject attackPrefeb;
+    private float nextAttack = 0f;
+
+
     // Y - verticial
     // X - horizontal
 
@@ -58,6 +64,7 @@ public class Player : MonoBehaviour
         ExecuteMove(move);
         TurnLeftOrRight(move);
         ExecuteJumping();
+        ExecuteAttack();
     }
 
     float ExecuteMove(float move) 
@@ -78,7 +85,6 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.localScale = new Vector3(
             -transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        
     }
 
     void ExecuteJumping() 
@@ -96,5 +102,24 @@ public class Player : MonoBehaviour
         animator.SetFloat("VelY", playerVelocity);
         animator.SetBool("JumpFall", !grounded);
         animator.SetBool("Walk", rigidbody2D.velocity.x != 0f && grounded);
+    }
+
+    void ExecuteAttack()
+    {
+        if(Input.GetButton("Fire1") && grounded && Time.time > nextAttack) {
+            Attack();
+        }
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Punch");
+        nextAttack = Time.time + attackRate;
+
+        GameObject cloneAttack = Instantiate(attackPrefeb, spawnAttack.position, spawnAttack.rotation);
+
+        if (!facingRight) {
+            cloneAttack.transform.eulerAngles = new Vector3(180, 0, 180);
+        }
     }
 }
