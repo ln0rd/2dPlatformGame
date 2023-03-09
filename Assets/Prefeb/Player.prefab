@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2520121536302837367}
   - component: {fileID: 2520121536302837352}
   - component: {fileID: 161859113450977818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6078825952910694147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnAttack
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2857344047007049735}
   - component: {fileID: 3489182747599015136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9131816527018099229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}

@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     }
 
     // faz o mesmo que a Update mas indicado para RigidBodys
+    // ele roda a cada 0.2s
     void FixedUpdate() 
     {
         // quando vai para a direita o valor e positivo, esquerda e negativo
