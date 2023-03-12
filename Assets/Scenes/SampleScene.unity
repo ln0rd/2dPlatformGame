@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 1289339077}
   m_Layer: 3
   m_Name: NotDefaultGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 1571134613}
   m_Layer: 3
   m_Name: NotDefaultGround (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 2049829185}
   m_Layer: 3
   m_Name: NotDefaultGround (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -551,10 +551,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
-    - target: {fileID: 1545062182220742813, guid: b1725ea3da334a84483406a28dcaa78e, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1545062182220742815, guid: b1725ea3da334a84483406a28dcaa78e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -612,21 +608,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Attack
       objectReference: {fileID: 0}
-    - target: {fileID: 2442390180564014260, guid: 12d599a2be4612549858ac1b80634453, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2442390180564014262, guid: 12d599a2be4612549858ac1b80634453, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2442390180564014262, guid: 12d599a2be4612549858ac1b80634453, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.95
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 2442390180564014262, guid: 12d599a2be4612549858ac1b80634453, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.77
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 2442390180564014262, guid: 12d599a2be4612549858ac1b80634453, type: 3}
       propertyPath: m_LocalPosition.z
@@ -716,6 +708,18 @@ PrefabInstance:
     - target: {fileID: 2520121536302837366, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520121536302837367, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712977938103856051, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712977938103856051, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}

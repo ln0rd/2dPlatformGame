@@ -6,9 +6,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    public float speed = 4;
-    public int jumpForce = 600;
-    public int health;
+    private float speed = 4;
+    private int jumpForce = 600;
+    private int health = 5;
     public Transform groundCheck;
 
     private bool invulnarable = false;
@@ -121,6 +121,48 @@ public class Player : MonoBehaviour
 
         if (!facingRight) {
             cloneAttack.transform.eulerAngles = new Vector3(180, 0, 180);
+        }
+    }
+
+
+    IEnumerator DamageEffect()
+    {
+        float actualSpeed = speed;
+
+        rigidbody2D.AddForce(new Vector2(0f, 50f));
+
+        for (float i = 0; i < 1f; i += 0.1f)
+        {
+            spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.enabled = true;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        invulnarable = false;
+    }
+
+    public void DamagePlayer()
+    {
+        if(invulnarable == false)
+        {
+            invulnarable = true;
+            health = health - 1;
+            StartCoroutine(DamageEffect());
+
+            if (health < 1)
+            {
+                Debug.Log("Morreu!!!");
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Snake"))
+        {
+            Debug.Log("Colider on Player");
+            DamagePlayer();
         }
     }
 }

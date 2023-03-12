@@ -160,9 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604c93c6e5aa3274da12ffd806baa1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  jumpForce: 400
-  health: 0
   groundCheck: {fileID: 9131816527018099229}
   attackRate: 0.5
   spawnAttack: {fileID: 6078825952910694147}
@@ -178,7 +175,7 @@ GameObject:
   - component: {fileID: 6078825952910694147}
   m_Layer: 6
   m_Name: SpawnAttack
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,9 +205,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2857344047007049735}
   - component: {fileID: 3489182747599015136}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
