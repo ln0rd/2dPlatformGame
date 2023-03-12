@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1598,7 +1598,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       tiles_47: 498927059
-      tiles_45: 1586376104
+      tiles_25: 1714893268
       tiles_66: -638419877
       tiles_44: -2082696042
       tiles_33: 215102197
@@ -1665,8 +1665,8 @@ TextureImporter:
       tiles_23: 697583756
       tiles_12: 964963667
       tiles_62: -746240191
+      tiles_45: 1586376104
       tiles_30: -1197074954
-      tiles_25: 1714893268
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

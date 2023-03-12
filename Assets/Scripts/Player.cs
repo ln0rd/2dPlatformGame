@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     private float speed = 4;
-    private int jumpForce = 600;
+    private int jumpForce = 310;
     private int health = 5;
     public Transform groundCheck;
 

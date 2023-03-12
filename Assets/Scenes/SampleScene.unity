@@ -709,17 +709,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2520121536302837367, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7712977938103856051, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7712977938103856051, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dcb92385ad34fe4da0875ce434b43d6, type: 3}

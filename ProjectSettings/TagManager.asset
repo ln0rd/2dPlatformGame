@@ -17,7 +17,7 @@ TagManager:
   - Player
   - Enemy
   - Trigger
-  - 
+  - Level
   - 
   - 
   - 
@@ -43,4 +43,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4046703133
+    locked: 0
+  - name: Ground
+    uniqueID: 1072080561
+    locked: 0
+  - name: Snake
+    uniqueID: 2570056853
+    locked: 0
+  - name: Attack
+    uniqueID: 2558513109
+    locked: 0
+  - name: Player
+    uniqueID: 3260971043
     locked: 0
