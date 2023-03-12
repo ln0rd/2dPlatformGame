@@ -8,8 +8,8 @@ public class CamScript : MonoBehaviour
     private Vector2 velocity;
     private Transform player;
 
-    private float smoothTimeX = 0.5f;
-    private float smoothTimeY = 0.5f;
+    private float smoothTimeX = 0.2f;
+    private float smoothTimeY = 0.2f;
 
     // Start is called before the first frame update
     void Start()
