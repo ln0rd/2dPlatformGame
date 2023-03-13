@@ -167,5 +167,11 @@ public class Player : MonoBehaviour
             Debug.Log("Colider on Player");
             DamagePlayer();
         }
+
+        if (col.CompareTag("Coin"))
+        {
+            Debug.Log("Colider on Coin");
+            Destroy(col.gameObject);
+        }
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - Snake
   - Attack
   - Ground
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Enemy
   - Trigger
   - Level
-  - 
+  - Coin
   - 
   - 
   - 
@@ -58,4 +59,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3260971043
+    locked: 0
+  - name: Coin
+    uniqueID: 2567012475
     locked: 0
