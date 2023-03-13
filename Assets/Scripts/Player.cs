@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public GameObject attackPrefeb;
     private float nextAttack = 0f;
 
+    private CamScript camScript;
 
     // Y - verticial
     // X - horizontal
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
         // e o objeto de fisica e quem sofre as ações da gravidade
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        camScript = GameObject.Find("Main Camera").GetComponent<CamScript>();
     }
 
     // Update is called once per frame
@@ -127,7 +129,8 @@ public class Player : MonoBehaviour
 
     IEnumerator DamageEffect()
     {
-        float actualSpeed = speed;
+
+        camScript.ShakeCamera(0.5f, 0.08f);
 
         rigidbody2D.AddForce(new Vector2(0f, 50f));
 
