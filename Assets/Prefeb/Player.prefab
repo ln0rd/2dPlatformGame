@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1033996253
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1097429508, guid: c1e107df511084348b165c71a5010bfe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,6 +164,7 @@ MonoBehaviour:
   attackRate: 0.5
   spawnAttack: {fileID: 6078825952910694147}
   attackPrefeb: {fileID: 2442390180564014260, guid: 12d599a2be4612549858ac1b80634453, type: 3}
+  skull: {fileID: 7127428923291661670, guid: ac647d448f144e4439cea104984f74ea, type: 3}
 --- !u!1 &6138869152134750705
 GameObject:
   m_ObjectHideFlags: 0

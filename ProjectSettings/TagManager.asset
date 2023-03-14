@@ -8,6 +8,7 @@ TagManager:
   - Attack
   - Ground
   - Coin
+  - Skull
   layers:
   - Default
   - TransparentFX

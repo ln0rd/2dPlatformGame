@@ -2,13 +2,14 @@ using System.Transactions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
 
     private float speed = 4;
     private int jumpForce = 310;
-    private int health = 5;
+    private int health = 2;
     public Transform groundCheck;
 
     private bool invulnarable = false;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     public float attackRate;
     public Transform spawnAttack;
     public GameObject attackPrefeb;
+    public GameObject skull;
     private float nextAttack = 0f;
 
     private CamScript camScript;
@@ -156,6 +158,11 @@ public class Player : MonoBehaviour
             if (health < 1)
             {
                 Debug.Log("Morreu!!!");
+                KingDeath();
+                Destroy(gameObject);
+
+                // Reiniciar Scene, build index pega a atual que o jogador está;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
             }
         }
     }
@@ -173,5 +180,12 @@ public class Player : MonoBehaviour
             Debug.Log("Colider on Coin");
             Destroy(col.gameObject);
         }
+    }
+
+    void KingDeath()
+    {
+        GameObject cloneSkull = Instantiate(skull, transform.position, Quaternion.identity);
+        Rigidbody2D rigidbody2DSkull = cloneSkull.GetComponent<Rigidbody2D>();
+        rigidbody2DSkull.AddForce(Vector3.up * 200);
     }
 }

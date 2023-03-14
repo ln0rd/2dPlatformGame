@@ -50,9 +50,12 @@ public class CamScript : MonoBehaviour
 
     void FollowPlayer()
     {
-        float posX = Mathf.SmoothDamp(transform.position.x, player.position.x, ref velocity.x, smoothTimeX);
-        float posY = Mathf.SmoothDamp(transform.position.y, player.position.y, ref velocity.y, smoothTimeX);
+        if (player != null)
+        {
+            float posX = Mathf.SmoothDamp(transform.position.x, player.position.x, ref velocity.x, smoothTimeX);
+            float posY = Mathf.SmoothDamp(transform.position.y, player.position.y, ref velocity.y, smoothTimeX);
 
-        transform.position = new Vector3(posX, posY, transform.position.z);
+            transform.position = new Vector3(posX, posY, transform.position.z);
+        }
     }
 }
