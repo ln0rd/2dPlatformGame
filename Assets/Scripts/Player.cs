@@ -159,10 +159,10 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("Morreu!!!");
                 KingDeath();
-                Destroy(gameObject);
-
-                // Reiniciar Scene, build index pega a atual que o jogador está;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+                // em vez de destruir o objeto nos colocamos ele como não ativo
+                //Destroy(gameObject);
+                gameObject.SetActive(false);
+                Invoke("ReloadLevel", 3f);
             }
         }
     }
@@ -187,5 +187,11 @@ public class Player : MonoBehaviour
         GameObject cloneSkull = Instantiate(skull, transform.position, Quaternion.identity);
         Rigidbody2D rigidbody2DSkull = cloneSkull.GetComponent<Rigidbody2D>();
         rigidbody2DSkull.AddForce(Vector3.up * 200);
+    }
+
+    void ReloadLevel()
+    {
+        // Reiniciar Scene, build index pega a atual que o jogador está;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 }
