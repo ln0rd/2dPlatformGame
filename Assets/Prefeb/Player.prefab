@@ -165,6 +165,10 @@ MonoBehaviour:
   spawnAttack: {fileID: 6078825952910694147}
   attackPrefeb: {fileID: 2442390180564014260, guid: 12d599a2be4612549858ac1b80634453, type: 3}
   skull: {fileID: 7127428923291661670, guid: ac647d448f144e4439cea104984f74ea, type: 3}
+  sfxHurt: {fileID: 8300000, guid: dcb466069a96d44458dc76c8c6c58d45, type: 3}
+  sfxAttack: {fileID: 8300000, guid: 4bacdadfda6fbc44087404f6024e6788, type: 3}
+  sfxJump: {fileID: 8300000, guid: 1735de60f218a2246b37fb90618a401a, type: 3}
+  sfxPicCoin: {fileID: 8300000, guid: 17b675743d5417d4ca429cd9d10674f5, type: 3}
 --- !u!1 &6138869152134750705
 GameObject:
   m_ObjectHideFlags: 0

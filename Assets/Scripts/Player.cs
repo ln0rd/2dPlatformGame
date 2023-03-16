@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     private float speed = 4;
     private int jumpForce = 310;
-    private int health = 2;
+    private int health = 3;
     public Transform groundCheck;
 
     private bool invulnarable = false;
@@ -161,7 +161,10 @@ public class Player : MonoBehaviour
             invulnarable = true;
             health = health - 1;
             StartCoroutine(DamageEffect());
+
             SoundManager.instance.PlaySound(sfxHurt);
+
+            Hud.instance.RefreshLifeBar(health);
 
             if (health < 1)
             {
