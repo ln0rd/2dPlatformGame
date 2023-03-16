@@ -29,6 +29,11 @@ public class Player : MonoBehaviour
 
     private CamScript camScript;
 
+    public AudioClip sfxHurt;
+    public AudioClip sfxAttack;
+    public AudioClip sfxJump;
+    public AudioClip sfxPicCoin;
+
     // Y - verticial
     // X - horizontal
 
@@ -98,6 +103,7 @@ public class Player : MonoBehaviour
             rigidbody2D.AddForce(new Vector2(0f, jumpForce));
             // para nao pular novamente e o personagem nao sair voando
             jumping = false;
+            SoundManager.instance.PlaySound(sfxJump);
         }
     }
 
@@ -113,6 +119,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetButton("Fire1") && grounded && Time.time > nextAttack) {
             Attack();
+            SoundManager.instance.PlaySound(sfxAttack);
         }
     }
 
@@ -154,6 +161,7 @@ public class Player : MonoBehaviour
             invulnarable = true;
             health = health - 1;
             StartCoroutine(DamageEffect());
+            SoundManager.instance.PlaySound(sfxHurt);
 
             if (health < 1)
             {
@@ -178,6 +186,7 @@ public class Player : MonoBehaviour
         if (col.CompareTag("Coin"))
         {
             Debug.Log("Colider on Coin");
+            SoundManager.instance.PlaySound(sfxPicCoin);
             Destroy(col.gameObject);
         }
     }
