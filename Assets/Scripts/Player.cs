@@ -154,12 +154,12 @@ public class Player : MonoBehaviour
         invulnarable = false;
     }
 
-    public void DamagePlayer()
+    public void DamagePlayer(int damageValue)
     {
         if(invulnarable == false)
         {
             invulnarable = true;
-            health = health - 1;
+            health = health - damageValue;
             StartCoroutine(DamageEffect());
 
             SoundManager.instance.PlaySound(sfxHurt);
@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
         if (col.CompareTag("Snake"))
         {
             Debug.Log("Colider on Player");
-            DamagePlayer();
+            DamagePlayer(1);
         }
 
         if (col.CompareTag("Coin"))
@@ -191,6 +191,11 @@ public class Player : MonoBehaviour
             Debug.Log("Colider on Coin");
             SoundManager.instance.PlaySound(sfxPicCoin);
             Destroy(col.gameObject);
+        }
+
+        if (col.CompareTag("WaterKill"))
+        {
+            DamagePlayer(3);
         }
     }
 

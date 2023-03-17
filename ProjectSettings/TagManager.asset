@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Coin
   - Skull
+  - WaterKill
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Trigger
   - Level
   - Coin
-  - 
+  - WaterKill
   - 
   - 
   - 
